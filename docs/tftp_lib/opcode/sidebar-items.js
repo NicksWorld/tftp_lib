@@ -1,0 +1,1 @@
+initSidebarItems({"static":[["OPCODE_ACK","Acknowledgment"],["OPCODE_DAT","Data packet"],["OPCODE_ERR","Error"],["OPCODE_RRQ","Read request"],["OPCODE_WRQ","Write request"]]});

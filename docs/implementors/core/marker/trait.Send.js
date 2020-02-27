@@ -1,0 +1,3 @@
+(function() {var implementors = {};
+implementors["tftp_lib"] = [{"text":"impl <a class=\"trait\" href=\"https://doc.rust-lang.org/nightly/core/marker/trait.Send.html\" title=\"trait core::marker::Send\">Send</a> for <a class=\"enum\" href=\"tftp_lib/enum.TftpError.html\" title=\"enum tftp_lib::TftpError\">TftpError</a>","synthetic":true,"types":["tftp_lib::TftpError"]}];
+if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()
