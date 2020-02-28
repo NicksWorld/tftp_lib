@@ -159,7 +159,7 @@ pub fn get_file(path: &str, sock: &UdpSocket) -> Result<Vec<u8>, TftpError> {
 				// Start with reading the file
 				send_ack(sock, &response[2..4], socket_addr);
 
-				final_data.extend(&response[4..]);
+				final_data.extend(&response[4..bytes]);
 				if bytes < 516 {
 					break;
 				}
