@@ -138,11 +138,11 @@ pub fn put_file(path: &str, data: &[u8], sock: &UdpSocket) -> Result<(), TftpErr
 /// # put_file("pathname.txt", "Testing".as_bytes(), &sock);
 /// println!("{}", String::from_utf8_lossy(&get_file("pathname.txt", &sock).unwrap()));
 /// ```
-pub fn get_file(path: &str, sock: &UdpSocket) -> Result<Vec<u8>, TftpError> {
+pub fn get_file(path: &str, sock: &UdpSocket, socket_addr: std::net::SocketAddr) -> Result<Vec<u8>, TftpError> {
 	// Better performance by ~40ns
 	let payload = [&opcode::OPCODE_RRQ, path.as_bytes(), &NULL, &NETASCII, &NULL].concat();
 	
-	sock.send_to(&payload, "127.0.0.1:69").unwrap();
+	sock.send_to(&payload, socket_addr).unwrap();
 
 	// Enter the loop managing the retrival of data
 	let mut final_data = vec![];
